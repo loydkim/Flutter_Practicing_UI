@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:practicinguitwo/main.dart';
+import 'package:practicinguitwo/objectDialog.dart';
 
 class PracticeContentItem extends StatefulWidget{
   final PracticeItemStructure data;
-  PracticeContentItem({this.data});
+  final String dialogImage;
+  PracticeContentItem({this.data,this.dialogImage});
   @override State<StatefulWidget> createState() => _PracticeContentItem();
 }
 
@@ -11,47 +13,54 @@ class _PracticeContentItem extends State<PracticeContentItem>{
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Stack(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(left:4.0,right:2.0,top: 10.0),
-          child: Card(
-            elevation: 4.0,
+    return GestureDetector(
+      onTap: (){
+        showDialog(
+            context: context,
+            builder: (context) => objectDialog(context,widget.dialogImage,widget.data.subject,widget.data.subTitle));
+      },
+      child: Stack(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left:4.0,right:2.0,top: 10.0),
+            child: Card(
+              elevation: 4.0,
+              child: Container(
+                width:120,
+                height: 120,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(widget.data.title,style:TextStyle(fontWeight: FontWeight.bold,fontSize: 18)),
+                      Padding(
+                        padding: const EdgeInsets.only(top:4.0),
+                        child: Text(widget.data.subTitle,style:TextStyle(fontSize: 16)),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top:4.0),
+                        child: Text(widget.data.date,style:TextStyle(fontSize: 14,color: Colors.grey[600])),
+                      ),
+                    ],
+                  ),
+                )
+              ),
+            ),
+          ),
+          Positioned(
             child: Container(
-              width:120,
-              height: 120,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(widget.data.title,style:TextStyle(fontWeight: FontWeight.bold,fontSize: 18)),
-                    Padding(
-                      padding: const EdgeInsets.only(top:4.0),
-                      child: Text(widget.data.subTitle,style:TextStyle(fontSize: 16)),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top:4.0),
-                      child: Text(widget.data.date,style:TextStyle(fontSize: 14,color: Colors.grey[600])),
-                    ),
-                  ],
-                ),
-              )
+              width: 120,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(widget.data.subject,style: TextStyle(color: Colors.indigo[900],fontSize: 22,fontWeight: FontWeight.bold,shadows: addStrokeToText()),),
+                ],
+              ),
             ),
           ),
-        ),
-        Positioned(
-          child: Container(
-            width: 120,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(widget.data.subject,style: TextStyle(color: Colors.indigo[900],fontSize: 22,fontWeight: FontWeight.bold,shadows: addStrokeToText()),),
-              ],
-            ),
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
