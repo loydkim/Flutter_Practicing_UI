@@ -1,0 +1,50 @@
+[
+  {
+    "type": "Listening",
+    "subject": "Example",
+    "simpleExplain": "Improve listening",
+    "stars": 4,
+    "releaseDate": "12-16-2020",
+    "practiceTime":600,
+    "relativeSection": "Section 1, Section 3",
+    "content": "In the actual test you will be given the following instructions:\n\ndo not open this question paper until you are told to do so\nwrite your name and candidate number in the spaces at the top of this page\nlisten to the instructions for each part of the paper carefully\nanswer all the questions\nwhile you are listening, write your answers on the question paper\nyou will have 10 minutes at the end of the test to copy your answers onto the separate answer sheet; use a pencil",
+    "iconName": "images/icon_listening.png",
+    "dialogImage": "images/listening.jpg"
+  },
+  {
+    "type": "Listening",
+    "subject": "Travel",
+    "simpleExplain": "Solve Miss direction",
+    "stars": 3,
+    "releaseDate": "12-13-2020",
+    "practiceTime":720,
+    "relativeSection": "Section 2",
+    "content": "Our travel guides, which are curated by Travel + Leisure editors and a network of local correspondents, highlight the best hotels, restaurants, shops, bars, and things to do in the world's most exciting destinations. Browse our in-depth travel information for great ideas and insider finds, plus smart travel tips that will have you feeling like a local in no time.",
+    "iconName": "images/icon_listening.png",
+    "dialogImage": "images/listening.jpg"
+  },
+  {
+    "type": "Listening",
+    "subject": "History",
+    "simpleExplain": "Understand history",
+    "stars": 5,
+    "releaseDate": "12-10-2020",
+    "practiceTime":660,
+    "relativeSection": "Section 4",
+    "content": "World history or global history as a field of historical study examines history from a global perspective. It emerged centuries ago; leading practitioners have included Voltaire (1694-1778), Hegel (1770-1831), Karl Marx (1818-1883) and Arnold J. Toynbee (1889-1975).",
+    "iconName": "images/icon_listening.png",
+    "dialogImage": "images/listening.jpg"
+  },
+  {
+    "type": "Listening",
+    "subject": "Culture",
+    "simpleExplain": "Various culture",
+    "stars": 3,
+    "releaseDate": "12-08-2020",
+    "practiceTime":630,
+    "relativeSection": "Section 4",
+    "content": "Culture (/ˈkʌltʃər/) is an umbrella term which encompasses the social behavior and norms found in human societies, as well as the knowledge, beliefs, arts, laws, customs, capabilities, and habits of the individuals in these groups.[1]",
+    "iconName": "images/icon_listening.png",
+    "dialogImage": "images/listening.jpg"
+  }
+]

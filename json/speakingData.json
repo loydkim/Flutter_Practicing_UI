@@ -1,0 +1,50 @@
+[
+  {
+    "type": "Speaking",
+    "subject": "Example",
+    "simpleExplain": "Improve speaking",
+    "stars": 4,
+    "releaseDate": "12-16-2020",
+    "practiceTime":600,
+    "relativeSection": "Section 1, Section 3",
+    "content": "In the actual test you will be given the following instructions:\n\ndo not open this question paper until you are told to do so\nwrite your name and candidate number in the spaces at the top of this page\nlisten to the instructions for each part of the paper carefully\nanswer all the questions\nwhile you are listening, write your answers on the question paper\nyou will have 10 minutes at the end of the test to copy your answers onto the separate answer sheet; use a pencil",
+    "iconName": "images/icon_spaking.png",
+    "dialogImage": "images/speaking.jpg"
+  },
+  {
+    "type": "Speaking",
+    "subject": "Company",
+    "simpleExplain": "The External links",
+    "stars": 3,
+    "releaseDate": "12-13-2020",
+    "practiceTime":720,
+    "relativeSection": "Section 2",
+    "content": "A company can be created as a legal person so that the company itself has limited liability as members perform or fail to discharge their duty according to the publicly declared incorporation, or published policy. When a company closes, it may need to be liquidated to avoid further legal obligations.\n\nCompanies may associate and collectively register themselves as new companies; the resulting entities are often known as corporate groups.",
+    "iconName": "images/icon_spaking.png",
+    "dialogImage": "images/speaking.jpg"
+  },
+  {
+    "type": "Speaking",
+    "subject": "Interview",
+    "simpleExplain": "Interviewer bias",
+    "stars": 5,
+    "releaseDate": "12-10-2020",
+    "practiceTime":660,
+    "relativeSection": "Section 4",
+    "content": "An interview is essentially a structured conversation where one participant asks questions, and the other provides answers.[1] In common parlance, the word \"interview\" refers to a one-on-one conversation between an interviewer and an interviewee. The interviewer asks questions to which the interviewee responds, usually providing information. That information may be used or provided to other audiences immediately or later. This feature is common to many types of interviews – a job interview or interview with a witness to an event may have no other audience present at the time, but the answers will be later provided to others in the employment or investigative process. An interview may also transfer information in both directions.",
+    "iconName": "images/icon_spaking.png",
+    "dialogImage": "images/speaking.jpg"
+  },
+  {
+    "type": "Speaking",
+    "subject": "Dance",
+    "simpleExplain": "Dance education",
+    "stars": 3,
+    "releaseDate": "12-08-2020",
+    "practiceTime":630,
+    "relativeSection": "Section 4",
+    "content": "Dance is a performing art form consisting of purposefully selected sequences of human movement. This movement has aesthetic and symbolic value, and is acknowledged as dance by performers and observers within a particular culture.[nb 1] Dance can be categorized and described by its choreography, by its repertoire of movements, or by its historical period or place of origin.[4]\n\nAn important distinction is to be drawn between the contexts of theatrical and participatory dance,[5] although these two categories are not always completely separate; both may have special functions, whether social, ceremonial, competitive, erotic, martial, or sacred/liturgical. Other forms of human movement are sometimes said to have a dance-like quality, including martial arts, gymnastics, cheerleading, figure skating, synchronised swimming, marching bands, and many other forms of athletics.",
+    "iconName": "images/icon_spaking.png",
+    "dialogImage": "images/speaking.jpg"
+  }
+]

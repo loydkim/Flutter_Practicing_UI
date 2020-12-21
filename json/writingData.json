@@ -1,0 +1,50 @@
+[
+  {
+    "type": "Writing",
+    "subject": "Example",
+    "simpleExplain": "Improve writing",
+    "stars": 4,
+    "releaseDate": "12-16-2020",
+    "practiceTime":600,
+    "relativeSection": "Section 1, Section 3",
+    "content": "In the actual test you will be given the following instructions:\n\ndo not open this question paper until you are told to do so\nwrite your name and candidate number in the spaces at the top of this page\nlisten to the instructions for each part of the paper carefully\nanswer all the questions\nwhile you are listening, write your answers on the question paper\nyou will have 10 minutes at the end of the test to copy your answers onto the separate answer sheet; use a pencil",
+    "iconName": "images/icon_writing.png",
+    "dialogImage": "images/writing.jpg"
+  },
+  {
+    "type": "Writing",
+    "subject": "Complaint",
+    "simpleExplain": "Normal Attorney fees",
+    "stars": 3,
+    "releaseDate": "12-13-2020",
+    "practiceTime":720,
+    "relativeSection": "Section 2",
+    "content": "In legal terminology, a complaint is any formal legal document that sets out the facts and legal reasons (see: cause of action) that the filing party or parties (the plaintiff(s)) believes are sufficient to support a claim against the party or parties against whom the claim is brought (the defendant(s)) that entitles the plaintiff(s) to a remedy (either money damages or injunctive relief). For example, the Federal Rules of Civil Procedure (FRCP) that govern civil litigation in United States courts provide that a civil action is commenced with the filing or service of a pleading called a complaint. Civil court rules in states that have incorporated the Federal Rules of Civil Procedure use the same term for the same pleading.",
+    "iconName": "images/icon_writing.png",
+    "dialogImage": "images/writing.jpg"
+  },
+  {
+    "type": "Writing",
+    "subject": "Gathering",
+    "simpleExplain": "Understand Gathering",
+    "stars": 5,
+    "releaseDate": "12-10-2020",
+    "practiceTime":660,
+    "relativeSection": "Section 4",
+    "content": "Global Gathering was an annual dance music festival by Angel Festivals Limited. Festivals are held in countries such as the UK, Poland, Russia, Belarus, Ukraine and feature leading electronic music artists from around the globe. The festival has been running since 2001; the concept came about following enormous interest in the opening Code club (now Air), the home of Godskitchen. The organisers recognised that there was room to expand dance music from clubs to outdoor music festival venues.",
+    "iconName": "images/icon_writing.png",
+    "dialogImage": "images/writing.jpg"
+  },
+  {
+    "type": "Writing",
+    "subject": "Book",
+    "simpleExplain": "Advanced printing",
+    "stars": 3,
+    "releaseDate": "12-08-2020",
+    "practiceTime":630,
+    "relativeSection": "Section 4",
+    "content": "A book is a medium for recording information in the form of writing or images, typically composed of many pages (made of papyrus, parchment, vellum, or paper) bound together and protected by a cover.[1] The technical term for this physical arrangement is codex (plural, codices). In the history of hand-held physical supports for extended written compositions or records, the codex replaces its predecessor, the scroll. A single sheet in a codex is a leaf and each side of a leaf is a page.\n\nAs an intellectual object, a book is prototypically a composition of such great length that it takes a considerable investment of time to compose and a still considerable, though not so extensive, investment of time to read. In a restricted sense, a book is a self-sufficient section or part of a longer composition, a usage that reflects the fact that, in antiquity, long works had to be written on several scrolls and each scroll had to be identified by the book it contained. Each part of Aristotle's Physics is called a book. In an unrestricted sense, a book is the compositional whole of which such sections, whether called books or chapters or parts, are parts.",
+    "iconName": "images/icon_writing.png",
+    "dialogImage": "images/writing.jpg"
+  }
+]

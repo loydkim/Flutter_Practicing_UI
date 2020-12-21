@@ -1,0 +1,50 @@
+[
+  {
+    "type": "Reading",
+    "subject": "Example",
+    "simpleExplain": "Improve reading",
+    "stars": 4,
+    "releaseDate": "12-16-2020",
+    "practiceTime":600,
+    "relativeSection": "Section 1, Section 3",
+    "content": "In the actual test you will be given the following instructions:\n\ndo not open this question paper until you are told to do so\nwrite your name and candidate number in the spaces at the top of this page\nlisten to the instructions for each part of the paper carefully\nanswer all the questions\nwhile you are listening, write your answers on the question paper\nyou will have 10 minutes at the end of the test to copy your answers onto the separate answer sheet; use a pencil",
+    "iconName": "images/icon_reading.png",
+    "dialogImage": "images/reading.jpg"
+  },
+  {
+    "type": "Reading",
+    "subject": "Animal",
+    "simpleExplain": "Animal Ecology",
+    "stars": 3,
+    "releaseDate": "12-13-2020",
+    "practiceTime":720,
+    "relativeSection": "Section 2",
+    "content": "Animals (also called Metazoa) are multicellular eukaryotic organisms that form the biological kingdom Animalia. With few exceptions, animals consume organic material, breathe oxygen, are able to move, can reproduce sexually, and grow from a hollow sphere of cells, the blastula, during embryonic development. Over 1.5 million living animal species have been described—of which around 1 million are insects—but it has been estimated there are over 7 million animal species in total. Animals range in length from 8.5 micrometres (0.00033 in) to 33.6 metres (110 ft). They have complex interactions with each other and their environments, forming intricate food webs. The kingdom Animalia includes humans but in colloquial use the term animal often refers only to non-human animals. The scientific study of animals is known as zoology.",
+    "iconName": "images/icon_reading.png",
+    "dialogImage": "images/reading.jpg"
+  },
+  {
+    "type": "Reading",
+    "subject": "War",
+    "simpleExplain": "World War Effects",
+    "stars": 5,
+    "releaseDate": "12-10-2020",
+    "practiceTime":660,
+    "relativeSection": "Section 4",
+    "content": "War is an intense armed conflict[a] between states, governments, societies, or paramilitary groups such as mercenaries, insurgents and militias. It is generally characterized by extreme violence, aggression, destruction, and mortality, using regular or irregular military forces. Warfare refers to the common activities and characteristics of types of war, or of wars in general.[2] Total war is warfare that is not restricted to purely legitimate military targets, and can result in massive civilian or other non-combatant suffering and casualties.\n\nThe scholarly study of war is sometimes called polemology (/ˌpɒləˈmɒlədʒi/ POL-ə-MOL-ə-jee), from the Greek polemos, meaning \"war\", and -logy, meaning \"the study of\".\n\nWhile some scholars see war as a universal and ancestral aspect of human nature,[3] others argue it is a result of specific socio-cultural, economic or ecological circumstances.",
+    "iconName": "images/icon_reading.png",
+    "dialogImage": "images/reading.jpg"
+  },
+  {
+    "type": "Reading",
+    "subject": "Disease",
+    "simpleExplain": "Disease Causes",
+    "stars": 3,
+    "releaseDate": "12-08-2020",
+    "practiceTime":630,
+    "relativeSection": "Section 4",
+    "content": "A disease is a particular abnormal condition that negatively affects the structure or function of all or part of an organism, and that is not due to any immediate external injury.[1][2] Diseases are often known to be medical conditions that are associated with specific symptoms and signs.[1][failed verification] A disease may be caused by external factors such as pathogens or by internal dysfunctions. For example, internal dysfunctions of the immune system can produce a variety of different diseases, including various forms of immunodeficiency, hypersensitivity, allergies and autoimmune disorders.",
+    "iconName": "images/icon_reading.png",
+    "dialogImage": "images/reading.jpg"
+  }
+]

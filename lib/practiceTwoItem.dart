@@ -1,104 +1,111 @@
 import 'package:flutter/material.dart';
-import 'package:practicinguitwo/main.dart';
 import 'package:practicinguitwo/practiceContentItem.dart';
 
+import 'data.dart';
+
 class PracticeTwoItem extends StatefulWidget{
-  final PracticeItemStructure data;
-  PracticeTwoItem({this.data});
+  final List<PracticeData> data;
+  final ValueChanged<String> updateMyData;
+  PracticeTwoItem({this.data,this.updateMyData});
   @override State<StatefulWidget> createState() => _PracticeTwoItem();
 }
 
-List<PracticeItemStructure> practiceContentData = [
-  new PracticeItemStructure(imageName: 'images/listening.jpg',title: 'Item1',subTitle: 'Improve listening',date:'2020-12-08',subject: 'Example'),
-  new PracticeItemStructure(imageName: 'images/reading.jpg',title: 'Item2',subTitle: 'Reading article',date:'2020-12-08',subject: 'Travel'),
-  new PracticeItemStructure(imageName: 'images/speaking.jpg',title: 'Item3',subTitle: 'Practicing pronunciation',date:'2020-12-08',subject: 'Sport'),
-  new PracticeItemStructure(imageName: 'images/writing.jpg',title: 'Item4',subTitle: 'Learn Writing form',date:'2020-12-08',subject: 'History'),
-  new PracticeItemStructure(imageName: 'images/listening.jpg',title: 'Item5',subTitle: 'Improve listening',date:'2020-12-08',subject: 'Animal'),
-  new PracticeItemStructure(imageName: 'images/reading.jpg',title: 'Item6',subTitle: 'Reading article',date:'2020-12-08',subject: 'Game'),
-  new PracticeItemStructure(imageName: 'images/speaking.jpg',title: 'Item7',subTitle: 'Practicing pronunciation',date:'2020-12-08',subject: 'School'),
-  new PracticeItemStructure(imageName: 'images/writing.jpg',title: 'Item8',subTitle: 'Learn Writing form',date:'2020-12-08',subject: 'Business'),
-];
-
 class _PracticeTwoItem extends State<PracticeTwoItem>{
 
-  PageController _controller = PageController(
-    initialPage: 0,
-    viewportFraction: 0.2
-  );
+  bool _isLoading = false;
+
+  Color _bgColor(String type){
+    Color returnValue = Colors.white;
+    switch(type){
+      case 'listening':{ returnValue = Colors.purple; break;}
+      case 'reading':{ returnValue = Colors.indigo; break;}
+      case 'speaking':{ returnValue = Colors.green[200]; break;}
+      case 'writing':{ returnValue = Colors.brown[400]; break;}
+    }
+    return returnValue;
+  }
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.only(top:8.0,left:4.0,right:4.0),
-        child: Container(
-          width:size.width,
-          height: size.height/4 - 46,
-          child: Stack(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left:8.0,bottom: 8.0),
-                child: Container(
-                  width:120,
-                  height: size.height/4 - 30,
-                  decoration: BoxDecoration(
-                    color: widget.data.bgColor,
-                    borderRadius: BorderRadius.all(
-                        Radius.circular(6.0)
-                    ),
-                  ),
-                  child: Stack(
-                    children: [
-                      Positioned(
-                        top:16,
-                        left:10,
-                        child: Center(
-                          child: Container(
-                            width: 70,
-                            height: 70,
-                            child: Image(image:AssetImage(widget.data.imageName),
-                                fit: BoxFit.cover),
-                          ),
+        child: Column(
+          children: [
+            Container(
+              width:size.width,
+              height: size.height/4 - size.height * (size.height > 800 ? 0.073: 0.065),
+              child: Stack(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left:8.0,bottom: 8.0),
+                    child: Container(
+                      width:120,
+                      height: size.height/4 - 30,
+                      decoration: BoxDecoration(
+                        color: _bgColor(widget.data[0].type.toLowerCase()),
+                        borderRadius: BorderRadius.all(
+                            Radius.circular(6.0)
                         ),
                       ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      child: Stack(
                         children: [
-                          Spacer(),
-                          Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: Text(widget.data.title,
-                              style: TextStyle(color: Colors.white,fontSize: 26,fontWeight: FontWeight.bold,shadows: addStrokeToText()),
+                          Positioned(
+                            top:size.height * 0.03,//size.height > 800 ? size.height * 0.03 :16,//20:16,
+                            left:10,
+                            child: Center(
+                              child: Container(
+                                width: size.height * 0.09,//size.height > 800 ? 76:70,
+                                height: size.height * 0.09,//size.height > 800 ? 76:70,
+                                child: Image(image:AssetImage(widget.data[0].iconName),
+                                    fit: BoxFit.cover),
+                              ),
                             ),
                           ),
-                          // Text(widget.data.subTitle,style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold,shadows: addStrokeToText()),),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Spacer(),
+                              Padding(
+                                padding: const EdgeInsets.all(4.0),
+                                child: Text(widget.data[0].type,
+                                  style: TextStyle(color: Colors.white,fontSize: 23,fontWeight: FontWeight.bold,shadows: addStrokeToText()),
+                                ),
+                              ),
+                            ],
+                          ),
                         ],
                       ),
-                    ],
+                    ),
                   ),
-                ),
-              ),
-              Positioned(
-                right:12,
-                // top:0,
-                child: Container(
-                  // decoration: BoxDecoration(color:Colors.white),
-                  height: 120,
-                  width: size.width-130,
-                  child:
-                  // PageView(
-                  //   controller: _controller,
-                  //   children: practiceContentData.map((data) => PracticeContentItem(data:data)).toList()
-                  // ),
-                  ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: practiceContentData.map((data) => PracticeContentItem(data:data,dialogImage: widget.data.dialogImage)).toList()
+                  Positioned(
+                    top:size.height > 800 ? size.height * 0.01 : 0,
+                    right:12,
+                    child: Container(
+                      height: 120,
+                      width: size.width-130,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: widget.data.map((data) => PracticeContentItem(dialogImage: widget.data[0].dialogImage,jsonData: data,updateMyData: widget.updateMyData,)).toList()
+                      ),
+                    ),
                   ),
-                ),
+
+                  _isLoading ? Positioned(
+                    child: Container(
+                      child: Center(
+                        child: CircularProgressIndicator(),
+                      ),
+                      color: Colors.white.withOpacity(0.7),
+                    ),
+                  ): Container()
+                ],
               )
-            ],
-          )
-      ),
+            ),
+            widget.data[0].type == 'Writing' ? Container() :
+            Divider(height: 1,color: Colors.black,thickness: 0.6,endIndent: 12.0,indent: 8.0,),
+          ],
+        ),
     );
   }
 

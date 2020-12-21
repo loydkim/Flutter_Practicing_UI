@@ -2,22 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:practicinguitwo/main.dart';
 import 'package:practicinguitwo/objectDialog.dart';
 
+import 'data.dart';
+
 class PracticeContentItem extends StatefulWidget{
-  final PracticeItemStructure data;
+  final PracticeData jsonData;
   final String dialogImage;
-  PracticeContentItem({this.data,this.dialogImage});
+  final ValueChanged<String> updateMyData;
+  PracticeContentItem({this.dialogImage,this.jsonData,this.updateMyData});
   @override State<StatefulWidget> createState() => _PracticeContentItem();
 }
 
 class _PracticeContentItem extends State<PracticeContentItem>{
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: (){
         showDialog(
-            context: context,
-            builder: (context) => objectDialog(context,widget.dialogImage,widget.data.subject,widget.data.subTitle));
+          context: context,
+          builder: (context) => objectDialog(context,widget.jsonData,widget.dialogImage,widget.updateMyData));
       },
       child: Stack(
         children: [
@@ -33,14 +35,26 @@ class _PracticeContentItem extends State<PracticeContentItem>{
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(widget.data.title,style:TextStyle(fontWeight: FontWeight.bold,fontSize: 18)),
+                      // Text(widget.jsonData.subject,style:TextStyle(fontWeight: FontWeight.bold,fontSize: 18)),
                       Padding(
                         padding: const EdgeInsets.only(top:4.0),
-                        child: Text(widget.data.subTitle,style:TextStyle(fontSize: 16)),
+                        child: Text(widget.jsonData.simpleExplain,style:TextStyle(fontSize: 16,color: widget.jsonData.isFinished ? Colors.grey[600]: Colors.black )),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top:4.0),
-                        child: Text(widget.data.date,style:TextStyle(fontSize: 14,color: Colors.grey[600])),
+                        child: Row(
+                          children: [
+                            _countStars(widget.jsonData.stars, 1),
+                            _countStars(widget.jsonData.stars, 2),
+                            _countStars(widget.jsonData.stars, 3),
+                            _countStars(widget.jsonData.stars, 4),
+                            _countStars(widget.jsonData.stars, 5),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(top:4.0),
+                        child: Text(widget.jsonData.releaseDate,style:TextStyle(fontSize: 14,color: Colors.grey[600])),
                       ),
                     ],
                   ),
@@ -50,11 +64,11 @@ class _PracticeContentItem extends State<PracticeContentItem>{
           ),
           Positioned(
             child: Container(
-              width: 120,
+              width: 134,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Text(widget.data.subject,style: TextStyle(color: Colors.indigo[900],fontSize: 22,fontWeight: FontWeight.bold,shadows: addStrokeToText()),),
+                  Text(widget.jsonData.subject,style: TextStyle(color:  widget.jsonData.isFinished ? Colors.grey[600]: widget.jsonData.subject == 'Example' ? Colors.green[900] : Colors.indigo[900],fontSize: 22,fontWeight: FontWeight.bold,shadows: addStrokeToText()),),
                 ],
               ),
             ),
@@ -62,6 +76,18 @@ class _PracticeContentItem extends State<PracticeContentItem>{
         ],
       ),
     );
+  }
+
+  Icon _countStars(int rating, int index) {
+    if (index <= rating) {
+      return Icon(
+        Icons.star,
+        color:  widget.jsonData.isFinished ? Colors.amber[300]: Colors.amber,
+        size: 16.0,
+      );
+    } else {
+      return Icon(Icons.star_border, color: widget.jsonData.isFinished ? Colors.amber[300]: Colors.amber,size: 16.0);
+    }
   }
 
   static List<Shadow> addStrokeToText(){
