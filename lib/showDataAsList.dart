@@ -1,10 +1,9 @@
-import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 
 import 'data.dart';
-import 'objectDialog.dart';
+import 'showObjectDialog.dart';
 
 class ShowDataAsList extends StatefulWidget{
   final List<List<PracticeData>> data;
@@ -26,6 +25,12 @@ class _ShowDataAsList extends State<ShowDataAsList>  with TickerProviderStateMix
     _tabController = new TabController(vsync: this, length: 4);
     _tabController.addListener(_handleTabSelection);
     super.initState();
+  }
+
+  @override
+  dispose() {
+    _tabController.dispose();
+    super.dispose();
   }
 
   List<PracticeData> _temporaryDataList;
@@ -191,7 +196,7 @@ class _ShowDataAsList extends State<ShowDataAsList>  with TickerProviderStateMix
       onTap: (){
         showDialog(
           context: context,
-          builder: (context) => objectDialog(context,practiceData,practiceData.dialogImage,_updateDonePracticeList));
+          builder: (context) => showObjectDialog(context,practiceData,practiceData.dialogImage,_updateDonePracticeList));
       },
       // leading: Text('leading'),
       title: Column(

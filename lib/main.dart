@@ -4,11 +4,10 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:practicinguitwo/practiceTwoItem.dart';
+import 'package:practicinguitwo/practiceUITwo.dart';
 
-import 'commonWidgets.dart';
 import 'data.dart';
-import 'practiceOneItem.dart';
+import 'practiceUIOne.dart';
 import 'showDataAsList.dart';
 
 void main() {
@@ -144,7 +143,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin{
             showDialog(
               context: context,
               builder: (context) => ShowDataAsList(data: _totalPracticeDataList),
-              barrierDismissible: true,
+              barrierDismissible: false,
             ).then((value) {for(String title in practiceTitleList) { _updateDonePracticeList(title); }});
           },
         ),
@@ -157,18 +156,25 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin{
               Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
-                  children: _totalPracticeDataList.map((data) => PracticeOneItem(data:data,updateMyData: _updateDonePracticeList,)).toList()
+                  children: _totalPracticeDataList.map((data) => PracticeUIOne(data:data,updateMyData: _updateDonePracticeList,)).toList()
                 ),
               ),
               Center(
                 child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    children: _totalPracticeDataList.map((data) => PracticeTwoItem(data:data,updateMyData: _updateDonePracticeList,)).toList()
+                    children: _totalPracticeDataList.map((data) => PracticeUITwo(data:data,updateMyData: _updateDonePracticeList,)).toList()
                 ),
               ),
             ]
           ),
-          _isLoading ? CommonWidgets.loadingCircle(): Container()
+          _isLoading ? Positioned(
+            child: Container(
+              child: Center(
+                child: CircularProgressIndicator(),
+              ),
+              color: Colors.white.withOpacity(0.7),
+            ),
+          ) : Container()
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -180,11 +186,11 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin{
         items: [
           BottomNavigationBarItem(
             icon: new Icon(Icons.whatshot),
-            title: new Text('UI 1'),
+            title: new Text('UI One'),
           ),
           BottomNavigationBarItem(
             icon: new Icon(Icons.border_color),
-            title: new Text('UI 2'),
+            title: new Text('UI Two'),
           ),
         ],
       ),
