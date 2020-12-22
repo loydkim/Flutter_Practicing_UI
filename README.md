@@ -1,6 +1,6 @@
 # Practice English Exam UI
 
-<img src="https://github.com/loydkim/Flutter_Practicing_UI/blob/main/promotion_ios.gif" width="320" height="580">
+<img src="https://github.com/loydkim/Flutter_Practicing_UI/blob/main/promotion_ios.gif" width="300" height="580">
 
 ** Please click the Image to know how it works **
 
